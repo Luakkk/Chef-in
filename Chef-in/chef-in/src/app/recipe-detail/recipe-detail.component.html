@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Detail</title>
+  <link rel="stylesheet" href="recipe-detail.component.css">
+</head>
+<body>
+
+<!-- recipe-detail.component.html -->
+<div class="recipe-detail">
+  <h1>{{ recipe?.label }}</h1>
+  <img [src]="recipe?.image" alt="Recipe Image">
+
+  <div class="recipe-details">
+    <p>Source: {{ recipe?.source }}</p>
+    <p>Yield: {{ recipe?.yield }}</p>
+    <p>Total Time: {{ recipe?.totalTime }}</p>
+    <p>Calories: {{ recipe?.calories }}</p>
+  </div>
+
+  <h2>Ingredients</h2>
+  <ul>
+    <li *ngFor="let ingredient of recipe?.ingredientLines">{{ ingredient }}</li>
+  </ul>
+
+  <a [href]="recipe?.url" target="_blank">View Full Recipe</a>
+</div>
+
+
+</body>
+</html>

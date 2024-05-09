@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chef.in - Search</title>
+  <link rel="stylesheet" href="search.component.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+<header>
+  <div class="background-image">
+    <div class="search-bar">
+      <input type="text" placeholder="Search for recipes..." [(ngModel)]="query">
+      <button (click)="search()">Search</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="search-results">
+    <div *ngFor="let recipe of recipes" class="recipe-card" (click)="goToRecipeDetail(recipe.uri)">
+      <h2>{{ recipe.label }}</h2>
+      <img [src]="recipe.image" alt="{{ recipe.label }}">
+      <p>{{ recipe.source }}</p>
+      <p>Total Time: {{ recipe.totalTime }}</p>
+      <p>Calories: {{ recipe.calories }}</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>Project created for Incubator Project by Alua Smanova</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+</body>
+</html>

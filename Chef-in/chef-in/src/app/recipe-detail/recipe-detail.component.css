@@ -1,0 +1,18 @@
+.recipe-detail {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.recipe-detail img {
+  max-width: 100%;
+  height: auto;
+}
+
+.recipe-details {
+  margin-bottom: 20px;
+}
+
+.recipe-details p {
+  margin: 5px 0;
+}
